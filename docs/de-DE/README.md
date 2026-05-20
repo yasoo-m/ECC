@@ -1083,7 +1083,7 @@ Dies zeigt alle verfügbaren Agents, Commands und Skills aus dem Plugin.
 </details>
 
 <details>
-<summary><b>Meine Hooks funktionieren nicht / ich sehe „Duplicate hooks file"-Fehler</b></summary>
+<summary><b>Meine Hooks funktionieren nicht / ich sehe den Fehler "Duplicate hooks file"</b></summary>
 
 Das ist das häufigste Problem. **Füge KEIN `"hooks"`-Feld zu `.claude-plugin/plugin.json` hinzu.** Claude Code v2.1+ lädt `hooks/hooks.json` aus installierten Plugins automatisch. Es explizit zu deklarieren, verursacht Fehler durch Duplikaterkennung. Siehe [#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103).
 </details>

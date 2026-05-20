@@ -12,8 +12,8 @@ einer klaren, gebräuchlichen deutschen Entsprechung werden **übersetzt**.
 | Agent | Agent | bleibt englisch — ECC-Oberfläche (`agents/`) |
 | Skill | Skill | bleibt englisch — ECC-Oberfläche (`skills/`) |
 | Hook | Hook | bleibt englisch — ECC-Oberfläche (`hooks/`) |
-| Command | Command | bleibt englisch als ECC-Oberfläche (`commands/`); generisch sonst „Befehl" |
-| Rule | Rule | bleibt englisch als ECC-Oberfläche (`rules/`); generisch sonst „Regel" |
+| Command | Command | bleibt englisch als ECC-Oberfläche (`commands/`); generisch sonst „Befehl“ |
+| Rule | Rule | bleibt englisch als ECC-Oberfläche (`rules/`); generisch sonst „Regel“ |
 | Harness | Harness | bleibt englisch — keine etablierte deutsche Entsprechung |
 | Instinct | Instinct | bleibt englisch — ECC-Begriff aus Continuous Learning |
 | Plugin | Plugin | bleibt englisch |
@@ -21,11 +21,11 @@ einer klaren, gebräuchlichen deutschen Entsprechung werden **übersetzt**.
 | Worktree | Worktree | bleibt englisch — Git-Fachbegriff |
 | Subagent | Subagent | bleibt englisch |
 | Frontmatter | Frontmatter | bleibt englisch; YAML-Feldnamen bleiben englisch |
-| Continuous Learning | Continuous Learning | ECC-Feature-Name bleibt englisch; beschreibend „kontinuierliches Lernen" |
-| Memory | Memory | als ECC-Konzept englisch; generisch „Speicher" |
+| Continuous Learning | Continuous Learning | ECC-Feature-Name bleibt englisch; beschreibend „kontinuierliches Lernen“ |
+| Memory | Memory | als ECC-Konzept englisch; generisch „Speicher“ |
 | Context window | Kontextfenster | |
 | Token | Token | |
-| Coverage | Coverage | „Testabdeckung", wo beschreibend |
+| Coverage | Coverage | „Testabdeckung“, wo beschreibend |
 | Test-Driven Development | testgetriebene Entwicklung | Kürzel TDD beibehalten |
 | Code review | Code-Review | |
 | Refactoring | Refactoring | |
@@ -37,7 +37,7 @@ einer klaren, gebräuchlichen deutschen Entsprechung werden **übersetzt**.
 | Deploy | Deployment / deployen | |
 | Pipeline | Pipeline | |
 | Orchestration | Orchestrierung | |
-| Repository | Repository | kurz „Repo" zulässig |
+| Repository | Repository | kurz „Repo“ zulässig |
 | Dependency | Abhängigkeit | |
 | Edge case | Grenzfall | |
 | Best practice | Best Practice | |
