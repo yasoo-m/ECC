@@ -82,6 +82,11 @@ class AuraVerdict:
     score: Optional[float] = None
     has_history: bool = False
     dimensions: Optional[dict[str, float]] = None
+    # False only when AURA could not be reached (network/parse failure) and the
+    # verdict is a synthetic `unknown`. A reachable AURA that genuinely returns
+    # `unknown` has reachable=True. before_settle's fail_open keys on this, not
+    # on the verdict alone, so it can't wave through unverified counterparties.
+    reachable: bool = True
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
 
     @property
@@ -117,7 +122,7 @@ class AuraVerdict:
     @classmethod
     def unreachable(cls, did: str, reason: str) -> "AuraVerdict":
         """A synthetic `unknown` verdict for network/parse failures."""
-        return cls(did=did, verdict="unknown", reason=reason)
+        return cls(did=did, verdict="unknown", reason=reason, reachable=False)
 
 
 # Indirection point so tests can inject canned responses without a network.
@@ -183,15 +188,16 @@ def before_settle(
     Tighten to reject brand-new agents too:
         before_settle(did, allow=("trusted", "caution"))
 
-    fail_open=True makes an *unreachable* AURA pass through (the verdict is
-    `unknown` but treated as allowed). Off by default — absence of evidence is
-    not evidence of trust.
+    fail_open=True makes an *unreachable* AURA pass through (transport failure
+    only — a reachable AURA that returns `unknown` is still rejected). Off by
+    default — absence of evidence is not evidence of trust.
     """
     v = aura_verdict(did, base_url=base_url, timeout=timeout, _fetch=_fetch)
 
     if v.verdict in allow:
         return v
-    if fail_open and v.verdict == "unknown" and not v.has_history:
+    # fail_open only excuses a transport failure, never a reachable `unknown`.
+    if fail_open and not v.reachable:
         return v
     raise AuraUntrusted(v)
 
